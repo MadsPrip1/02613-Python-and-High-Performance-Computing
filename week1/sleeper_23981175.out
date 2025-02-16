@@ -1,0 +1,55 @@
+
+------------------------------------------------------------
+Sender: LSF System <lsfadmin@hpc.dtu.dk>
+Subject: Job 23981175: <sleeper> in cluster <dcc> Exited
+
+Job <sleeper> was submitted from host <hpclogin1> by user <s240577> in cluster <dcc> at Thu Feb  6 08:57:12 2025
+Job was executed on host(s) <n-62-31-21>, in queue <hpc>, as user <s240577> in cluster <dcc> at Thu Feb  6 08:57:14 2025
+</zhome/20/1/209339> was used as the home directory.
+</zhome/20/1/209339/02613-Python-and-High-Performance-Computing/week1> was used as the working directory.
+Started at Thu Feb  6 08:57:14 2025
+Terminated at Thu Feb  6 08:57:33 2025
+Results reported at Thu Feb  6 08:57:33 2025
+
+Your job looked like:
+
+------------------------------------------------------------
+# LSBATCH: User input
+#!/bin/bash
+
+#BSUB -J sleeper
+#BSUB -q hpc
+#BSUB -W 2
+#BSUB -R "rusage[mem=512MB]"
+#BSUB -o sleeper_%J.out
+#BSUB -e sleeper_%J.err
+
+sleep 60
+
+
+------------------------------------------------------------
+
+TERM_OWNER: job killed by owner.
+Exited with exit code 130.
+
+Resource usage summary:
+
+    CPU time :                                   0.45 sec.
+    Max Memory :                                 5 MB
+    Average Memory :                             5.00 MB
+    Total Requested Memory :                     512.00 MB
+    Delta Memory :                               507.00 MB
+    Max Swap :                                   -
+    Max Processes :                              4
+    Max Threads :                                5
+    Run time :                                   56 sec.
+    Turnaround time :                            21 sec.
+
+The output (if any) is above this job summary.
+
+
+
+PS:
+
+Read file <sleeper_23981175.err> for stderr output of this job.
+

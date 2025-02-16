@@ -1,0 +1,100 @@
+Architecture:                         x86_64
+CPU op-mode(s):                       32-bit, 64-bit
+Address sizes:                        46 bits physical, 48 bits virtual
+Byte Order:                           Little Endian
+CPU(s):                               20
+On-line CPU(s) list:                  0-19
+Vendor ID:                            GenuineIntel
+Model name:                           Intel(R) Xeon(R) CPU E5-2660 v3 @ 2.60GHz
+CPU family:                           6
+Model:                                63
+Thread(s) per core:                   1
+Core(s) per socket:                   10
+Socket(s):                            2
+Stepping:                             2
+CPU(s) scaling MHz:                   90%
+CPU max MHz:                          3300.0000
+CPU min MHz:                          1200.0000
+BogoMIPS:                             5187.81
+Flags:                                fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp lm constant_tsc arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf pni pclmulqdq dtes64 ds_cpl vmx smx est tm2 ssse3 sdbg fma cx16 xtpr pdcm pcid dca sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm abm cpuid_fault epb invpcid_single pti intel_ppin ssbd ibrs ibpb stibp tpr_shadow vnmi flexpriority ept vpid ept_ad fsgsbase tsc_adjust bmi1 avx2 smep bmi2 erms invpcid cqm xsaveopt cqm_llc cqm_occup_llc dtherm ida arat pln pts md_clear flush_l1d
+Virtualization:                       VT-x
+L1d cache:                            640 KiB (20 instances)
+L1i cache:                            640 KiB (20 instances)
+L2 cache:                             5 MiB (20 instances)
+L3 cache:                             50 MiB (2 instances)
+NUMA node(s):                         2
+NUMA node0 CPU(s):                    0-9
+NUMA node1 CPU(s):                    10-19
+Vulnerability Gather data sampling:   Not affected
+Vulnerability Itlb multihit:          KVM: Mitigation: VMX disabled
+Vulnerability L1tf:                   Mitigation; PTE Inversion; VMX conditional cache flushes, SMT disabled
+Vulnerability Mds:                    Mitigation; Clear CPU buffers; SMT disabled
+Vulnerability Meltdown:               Mitigation; PTI
+Vulnerability Mmio stale data:        Mitigation; Clear CPU buffers; SMT disabled
+Vulnerability Reg file data sampling: Not affected
+Vulnerability Retbleed:               Not affected
+Vulnerability Spec rstack overflow:   Not affected
+Vulnerability Spec store bypass:      Mitigation; Speculative Store Bypass disabled via prctl
+Vulnerability Spectre v1:             Mitigation; usercopy/swapgs barriers and __user pointer sanitization
+Vulnerability Spectre v2:             Mitigation; Retpolines; IBPB conditional; IBRS_FW; RSB filling; PBRSB-eIBRS Not affected; BHI Not affected
+Vulnerability Srbds:                  Not affected
+Vulnerability Tsx async abort:        Not affected
+
+------------------------------------------------------------
+Sender: LSF System <lsfadmin@hpc.dtu.dk>
+Subject: Job 23981163: <sleeper> in cluster <dcc> Done
+
+Job <sleeper> was submitted from host <hpclogin1> by user <s240577> in cluster <dcc> at Thu Feb  6 08:51:38 2025
+Job was executed on host(s) <16*n-62-29-29>, in queue <hpc>, as user <s240577> in cluster <dcc> at Thu Feb  6 08:51:40 2025
+</zhome/20/1/209339> was used as the home directory.
+</zhome/20/1/209339/02613-Python-and-High-Performance-Computing/week1> was used as the working directory.
+Started at Thu Feb  6 08:51:40 2025
+Terminated at Thu Feb  6 08:52:40 2025
+Results reported at Thu Feb  6 08:52:40 2025
+
+Your job looked like:
+
+------------------------------------------------------------
+# LSBATCH: User input
+#!/bin/bash
+
+#BSUB -J sleeper
+#BSUB -q hpc
+#BSUB -W 2
+#BSUB -R "rusage[mem=512MB]"
+#BSUB -R "select[model==XeonE5_2660v3]"
+#BSUB -n 16
+#BSUB -R "span[hosts=1]"
+#BSUB -o sleeper_%J.out
+#BSUB -e sleeper_%J.err
+#BSUB -B
+
+lscpu
+sleep 60
+
+
+------------------------------------------------------------
+
+Successfully completed.
+
+Resource usage summary:
+
+    CPU time :                                   0.41 sec.
+    Max Memory :                                 6 MB
+    Average Memory :                             6.00 MB
+    Total Requested Memory :                     8192.00 MB
+    Delta Memory :                               8186.00 MB
+    Max Swap :                                   -
+    Max Processes :                              4
+    Max Threads :                                5
+    Run time :                                   60 sec.
+    Turnaround time :                            62 sec.
+
+The output (if any) is above this job summary.
+
+
+
+PS:
+
+Read file <sleeper_23981163.err> for stderr output of this job.
+

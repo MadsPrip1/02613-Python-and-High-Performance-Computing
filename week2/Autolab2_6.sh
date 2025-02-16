@@ -23,8 +23,8 @@
 
 ### -- Specify the output and error file. %J is the job-id -- 
 ### -- -o and -e mean append, -oo and -eo mean overwrite -- 
-#BSUB -o multiplier_%J.out
-#BSUB -e multiplier_%J.err
+#BSUB -o bash_output/multiplier_%J.out
+#BSUB -e bash_output/multiplier_%J.err
 
 ### -- send notification at start to email --
 #BSUB -B
@@ -41,4 +41,4 @@ conda activate 02613
 
 ### -- run in the job --
 ### -- python program.py path/to/data.txt p -- 
-python autolab2_5.py matrix2_6.npy 1
+python Autolab2_5.py matrix2_6.npy 1
