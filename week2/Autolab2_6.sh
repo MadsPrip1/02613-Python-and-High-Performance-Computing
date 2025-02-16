@@ -38,4 +38,4 @@ conda activate 02613
 
 ### -- run in the job --
 ### -- python program.py path/to/data.txt p -- 
-python Autolab2_5.py matrix2_6.npy 10
+python Autolab2_5.py input.npy 10
