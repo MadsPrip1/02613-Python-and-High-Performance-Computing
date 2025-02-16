@@ -32,13 +32,10 @@
 ### -- send notification at completion to email --
 #BSUB -N
 
-### -- display information about the CPU architecture --
-lscpu
-
 ### -- Need to activate the python environment --
 source /dtu/projects/02613_2025/conda/conda_init.sh
 conda activate 02613
 
 ### -- run in the job --
 ### -- python program.py path/to/data.txt p -- 
-python Autolab2_5.py matrix2_6.npy 1
+python Autolab2_5.py matrix2_6.npy 10
