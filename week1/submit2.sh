@@ -14,8 +14,8 @@
 
 ### -- Specify the output and error file. %J is the job-id -- 
 ### -- -o and -e mean append, -oo and -eo mean overwrite -- 
-#BSUB -o sleeper_%J.out
-#BSUB -e sleeper_%J.err
+#BSUB -o output/sleeper_%J.out
+#BSUB -e output/sleeper_%J.err
 
 ### -- send notification at start to email --
 #BSUB -B
