@@ -7,10 +7,10 @@
 #BSUB -q hpc
 
 ### -- set walltime limit: hh:mm -- 
-#BSUB -W 4
+#BSUB -W 10
 
 ### -- specify that we need 512MB of memory per core/slot --
-#BSUB -R "rusage[mem=1GB]"
+#BSUB -R "rusage[mem=5GB]"
 
 ### -- select the machine to be XeonGold6226R --
 #BSUB -R "select[model==XeonGold6226R]"

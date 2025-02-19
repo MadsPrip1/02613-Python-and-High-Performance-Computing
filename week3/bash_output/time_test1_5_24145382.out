@@ -36,23 +36,30 @@ Vulnerability Spectre v1:             Mitigation; usercopy/swapgs barriers and _
 Vulnerability Spectre v2:             Mitigation; Enhanced / Automatic IBRS; IBPB conditional; RSB filling; PBRSB-eIBRS SW sequence; BHI SW loop, KVM SW loop
 Vulnerability Srbds:                  Not affected
 Vulnerability Tsx async abort:        Mitigation; TSX disabled
-The number of sizes is: [   10    11    13    16    19    22    26    31    37    43    51    61
-    71    84   100   117   138   163   193   227   268   316   372   439
-   517   610   719   848  1000  1178  1389  1637  1930  2275  2682  3162
-  3727  4393  5179  6105  7196  8483 10000 11787 13894 16378 19306 22758
- 26826 31622]
+The number of sizes is: [      100       464      2154     10000     46415    215443   1000000
+   4641588  21544346 100000000]
+100
+464
+2154
+10000
+46415
+215443
+1000000
+4641588
+21544346
+100000000
 
 ------------------------------------------------------------
 Sender: LSF System <lsfadmin@hpc.dtu.dk>
-Subject: Job 24143486: <time_test1_3> in cluster <dcc> Done
+Subject: Job 24145382: <time_test1_5> in cluster <dcc> Done
 
-Job <time_test1_3> was submitted from host <hpclogin1> by user <s240577> in cluster <dcc> at Wed Feb 19 12:03:14 2025
-Job was executed on host(s) <n-62-11-64>, in queue <hpc>, as user <s240577> in cluster <dcc> at Wed Feb 19 12:03:14 2025
+Job <time_test1_5> was submitted from host <hpclogin1> by user <s240577> in cluster <dcc> at Wed Feb 19 15:51:00 2025
+Job was executed on host(s) <n-62-11-64>, in queue <hpc>, as user <s240577> in cluster <dcc> at Wed Feb 19 15:51:01 2025
 </zhome/20/1/209339> was used as the home directory.
 </zhome/20/1/209339/02613-Python-and-High-Performance-Computing/week3> was used as the working directory.
-Started at Wed Feb 19 12:03:14 2025
-Terminated at Wed Feb 19 12:03:53 2025
-Results reported at Wed Feb 19 12:03:53 2025
+Started at Wed Feb 19 15:51:01 2025
+Terminated at Wed Feb 19 15:56:06 2025
+Results reported at Wed Feb 19 15:56:06 2025
 
 Your job looked like:
 
@@ -61,16 +68,16 @@ Your job looked like:
 #!/bin/bash
 
 ### -- set the job Name -- 
-#BSUB -J time_test1_3
+#BSUB -J time_test1_5
 
 ### -- specify queue --
 #BSUB -q hpc
 
 ### -- set walltime limit: hh:mm -- 
-#BSUB -W 4
+#BSUB -W 10
 
 ### -- specify that we need 512MB of memory per core/slot --
-#BSUB -R "rusage[mem=14GB]"
+#BSUB -R "rusage[mem=5GB]"
 
 ### -- select the machine to be XeonGold6226R --
 #BSUB -R "select[model==XeonGold6226R]"
@@ -83,8 +90,8 @@ Your job looked like:
 
 ### -- Specify the output and error file. %J is the job-id -- 
 ### -- -o and -e mean append, -oo and -eo mean overwrite -- 
-#BSUB -o bash_output/time_test1_3_%J.out
-#BSUB -e bash_output/time_test1_3_%J.err
+#BSUB -o bash_output/time_test1_5_%J.out
+#BSUB -e bash_output/time_test1_5_%J.err
 
 ### -- Need to activate the python environment --
 source /dtu/projects/02613_2025/conda/conda_init.sh
@@ -94,7 +101,7 @@ lscpu
 
 ### -- run in the job --
 ### -- python program.py num_of_iterations -- 
-python Autolab1_3.py 1000
+python Autolab1_5.py 1000
 
 ------------------------------------------------------------
 
@@ -102,16 +109,16 @@ Successfully completed.
 
 Resource usage summary:
 
-    CPU time :                                   38.41 sec.
-    Max Memory :                                 2384 MB
-    Average Memory :                             2384.00 MB
-    Total Requested Memory :                     14336.00 MB
-    Delta Memory :                               11952.00 MB
+    CPU time :                                   303.89 sec.
+    Max Memory :                                 2047 MB
+    Average Memory :                             1314.25 MB
+    Total Requested Memory :                     5120.00 MB
+    Delta Memory :                               3073.00 MB
     Max Swap :                                   -
     Max Processes :                              4
     Max Threads :                                5
-    Run time :                                   42 sec.
-    Turnaround time :                            39 sec.
+    Run time :                                   312 sec.
+    Turnaround time :                            306 sec.
 
 The output (if any) is above this job summary.
 
@@ -119,5 +126,5 @@ The output (if any) is above this job summary.
 
 PS:
 
-Read file <bash_output/time_test1_3_24143486.err> for stderr output of this job.
+Read file <bash_output/time_test1_5_24145382.err> for stderr output of this job.
 
