@@ -24,20 +24,20 @@ def read_blosc(file_name):
     
 n = int(sys.argv[1])
 
-zeros = np.zeros(shape=(n,n,n)).astype('unit8')
+zeros = np.zeros(shape=(n,n,n), dtype=np.uint8)
 
 t_start = perf_counter()
-write_numpy(zeros, 'arrays/write_numpy')
+write_numpy(arr=zeros, file_name='numpy')
 print('Time required for write_numpy is', perf_counter() - t_start)
 
 t_start = perf_counter()
-write_blosc(zeros, 'arrays/write_blosc')
+write_blosc(arr=zeros, file_name='blosc')
 print('Time required for write_blosc is', perf_counter() - t_start)
 
 t_start = perf_counter()
-read_numpy(zeros, 'arrays/read_numpy')
+read_numpy(file_name='numpy')
 print('Time required for read_numpy is', perf_counter() - t_start)
 
 t_start = perf_counter()
-read_blosc(zeros, 'arrays/read_blosc')
+read_blosc(file_name='blosc')
 print('Time required for read_blosc is', perf_counter() - t_start)
