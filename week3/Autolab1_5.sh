@@ -1,7 +1,7 @@
 #!/bin/bash
 
 ### -- set the job Name -- 
-#BSUB -J time_test1_3
+#BSUB -J time_test1_5
 
 ### -- specify queue --
 #BSUB -q hpc
@@ -10,7 +10,7 @@
 #BSUB -W 4
 
 ### -- specify that we need 512MB of memory per core/slot --
-#BSUB -R "rusage[mem=14GB]"
+#BSUB -R "rusage[mem=1GB]"
 
 ### -- select the machine to be XeonGold6226R --
 #BSUB -R "select[model==XeonGold6226R]"
@@ -23,8 +23,8 @@
 
 ### -- Specify the output and error file. %J is the job-id -- 
 ### -- -o and -e mean append, -oo and -eo mean overwrite -- 
-#BSUB -o bash_output/time_test1_3_%J.out
-#BSUB -e bash_output/time_test1_3_%J.err
+#BSUB -o bash_output/time_test1_5_%J.out
+#BSUB -e bash_output/time_test1_5_%J.err
 
 ### -- Need to activate the python environment --
 source /dtu/projects/02613_2025/conda/conda_init.sh
@@ -34,4 +34,4 @@ lscpu
 
 ### -- run in the job --
 ### -- python program.py num_of_iterations -- 
-python Autolab1_3.py 1000
+python Autolab1_5.py 1000

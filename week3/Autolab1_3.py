@@ -5,7 +5,8 @@ from time import perf_counter
 
 numbers = int(sys.argv[1])              # Number of times to repeat the operation
 
-SIZES = np.logspace(1, 2.5, 10).astype(int)
+SIZES = np.logspace(1, 4.5).astype(int)
+print(f'The number of sizes is: {SIZES}')
 
 performance_column = []
 performance_row = []

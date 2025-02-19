@@ -36,18 +36,23 @@ Vulnerability Spectre v1:             Mitigation; usercopy/swapgs barriers and _
 Vulnerability Spectre v2:             Mitigation; Enhanced / Automatic IBRS; IBPB conditional; RSB filling; PBRSB-eIBRS SW sequence; BHI SW loop, KVM SW loop
 Vulnerability Srbds:                  Not affected
 Vulnerability Tsx async abort:        Mitigation; TSX disabled
+The number of sizes is: [   10    11    13    16    19    22    26    31    37    43    51    61
+    71    84   100   117   138   163   193   227   268   316   372   439
+   517   610   719   848  1000  1178  1389  1637  1930  2275  2682  3162
+  3727  4393  5179  6105  7196  8483 10000 11787 13894 16378 19306 22758
+ 26826 31622]
 
 ------------------------------------------------------------
 Sender: LSF System <lsfadmin@hpc.dtu.dk>
-Subject: Job 24142757: <time_test1_3> in cluster <dcc> Done
+Subject: Job 24143486: <time_test1_3> in cluster <dcc> Done
 
-Job <time_test1_3> was submitted from host <hpclogin1> by user <s240577> in cluster <dcc> at Wed Feb 19 11:27:53 2025
-Job was executed on host(s) <n-62-11-64>, in queue <hpc>, as user <s240577> in cluster <dcc> at Wed Feb 19 11:27:53 2025
+Job <time_test1_3> was submitted from host <hpclogin1> by user <s240577> in cluster <dcc> at Wed Feb 19 12:03:14 2025
+Job was executed on host(s) <n-62-11-64>, in queue <hpc>, as user <s240577> in cluster <dcc> at Wed Feb 19 12:03:14 2025
 </zhome/20/1/209339> was used as the home directory.
 </zhome/20/1/209339/02613-Python-and-High-Performance-Computing/week3> was used as the working directory.
-Started at Wed Feb 19 11:27:53 2025
-Terminated at Wed Feb 19 11:27:55 2025
-Results reported at Wed Feb 19 11:27:55 2025
+Started at Wed Feb 19 12:03:14 2025
+Terminated at Wed Feb 19 12:03:53 2025
+Results reported at Wed Feb 19 12:03:53 2025
 
 Your job looked like:
 
@@ -65,7 +70,7 @@ Your job looked like:
 #BSUB -W 4
 
 ### -- specify that we need 512MB of memory per core/slot --
-#BSUB -R "rusage[mem=512MB]"
+#BSUB -R "rusage[mem=14GB]"
 
 ### -- select the machine to be XeonGold6226R --
 #BSUB -R "select[model==XeonGold6226R]"
@@ -97,16 +102,16 @@ Successfully completed.
 
 Resource usage summary:
 
-    CPU time :                                   1.91 sec.
-    Max Memory :                                 47 MB
-    Average Memory :                             31.67 MB
-    Total Requested Memory :                     512.00 MB
-    Delta Memory :                               465.00 MB
+    CPU time :                                   38.41 sec.
+    Max Memory :                                 2384 MB
+    Average Memory :                             2384.00 MB
+    Total Requested Memory :                     14336.00 MB
+    Delta Memory :                               11952.00 MB
     Max Swap :                                   -
     Max Processes :                              4
     Max Threads :                                5
-    Run time :                                   14 sec.
-    Turnaround time :                            2 sec.
+    Run time :                                   42 sec.
+    Turnaround time :                            39 sec.
 
 The output (if any) is above this job summary.
 
@@ -114,5 +119,5 @@ The output (if any) is above this job summary.
 
 PS:
 
-Read file <bash_output/time_test1_3_24142757.err> for stderr output of this job.
+Read file <bash_output/time_test1_3_24143486.err> for stderr output of this job.
 
