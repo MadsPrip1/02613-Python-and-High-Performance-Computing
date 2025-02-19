@@ -34,7 +34,9 @@ lscpu
 
 ### -- run in the job --
 ### -- python program.py num_of_iterations -- 
-python Autolab2_1.py 256
-python Autolab2_1.py 512
-python Autolab2_1.py 1024
+python Autolab2_1.py 256 512 1024
+
+### -- Alternative way to do it, used for the autolab exercise: --
+###python Autolab2_1.py 512
+###python Autolab2_1.py 1024
 
