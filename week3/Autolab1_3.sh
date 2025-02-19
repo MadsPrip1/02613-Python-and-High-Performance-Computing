@@ -1,7 +1,7 @@
 #!/bin/bash
 
 ### -- set the job Name -- 
-#BSUB -J time_test1_2
+#BSUB -J time_test1_3
 
 ### -- specify queue --
 #BSUB -q hpc
@@ -23,8 +23,8 @@
 
 ### -- Specify the output and error file. %J is the job-id -- 
 ### -- -o and -e mean append, -oo and -eo mean overwrite -- 
-#BSUB -o bash_output/time_test1_2_%J.out
-#BSUB -e bash_output/time_test1_2_%J.err
+#BSUB -o bash_output/time_test1_3_%J.out
+#BSUB -e bash_output/time_test1_3_%J.err
 
 ### -- Need to activate the python environment --
 source /dtu/projects/02613_2025/conda/conda_init.sh
