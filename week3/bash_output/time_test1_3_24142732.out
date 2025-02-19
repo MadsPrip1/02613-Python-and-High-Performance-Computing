@@ -1,0 +1,78 @@
+
+------------------------------------------------------------
+Sender: LSF System <lsfadmin@hpc.dtu.dk>
+Subject: Job 24142732: <time_test1_3> in cluster <dcc> Done
+
+Job <time_test1_3> was submitted from host <hpclogin1> by user <s240577> in cluster <dcc> at Wed Feb 19 11:26:31 2025
+Job was executed on host(s) <n-62-11-66>, in queue <hpc>, as user <s240577> in cluster <dcc> at Wed Feb 19 11:26:33 2025
+</zhome/20/1/209339> was used as the home directory.
+</zhome/20/1/209339/02613-Python-and-High-Performance-Computing/week3> was used as the working directory.
+Started at Wed Feb 19 11:26:33 2025
+Terminated at Wed Feb 19 11:26:36 2025
+Results reported at Wed Feb 19 11:26:36 2025
+
+Your job looked like:
+
+------------------------------------------------------------
+# LSBATCH: User input
+#!/bin/bash
+
+### -- set the job Name -- 
+#BSUB -J time_test1_3
+
+### -- specify queue --
+#BSUB -q hpc
+
+### -- set walltime limit: hh:mm -- 
+#BSUB -W 4
+
+### -- specify that we need 512MB of memory per core/slot --
+#BSUB -R "rusage[mem=512MB]"
+
+### -- select the machine to be XeonGold6226R --
+#BSUB -R "select[model==XeonGold6226R]"
+
+### -- ask for number of cores (default: 1) -- 
+#BSUB -n 1
+
+### -- specify that the cores must be on the same host -- 
+#BSUB -R "span[hosts=1]"
+
+### -- Specify the output and error file. %J is the job-id -- 
+### -- -o and -e mean append, -oo and -eo mean overwrite -- 
+#BSUB -o bash_output/time_test1_3_%J.out
+#BSUB -e bash_output/time_test1_3_%J.err
+
+### -- Need to activate the python environment --
+source /dtu/projects/02613_2025/conda/conda_init.sh
+conda activate 02613
+
+### -- run in the job --
+### -- python program.py num_of_iterations -- 
+python Autolab1_3.py 1000
+
+------------------------------------------------------------
+
+Successfully completed.
+
+Resource usage summary:
+
+    CPU time :                                   2.11 sec.
+    Max Memory :                                 -
+    Average Memory :                             -
+    Total Requested Memory :                     512.00 MB
+    Delta Memory :                               -
+    Max Swap :                                   -
+    Max Processes :                              -
+    Max Threads :                                -
+    Run time :                                   7 sec.
+    Turnaround time :                            5 sec.
+
+The output (if any) is above this job summary.
+
+
+
+PS:
+
+Read file <bash_output/time_test1_3_24142732.err> for stderr output of this job.
+

@@ -30,6 +30,8 @@
 source /dtu/projects/02613_2025/conda/conda_init.sh
 conda activate 02613
 
+lscpu
+
 ### -- run in the job --
 ### -- python program.py num_of_iterations -- 
 python Autolab1_3.py 1000
