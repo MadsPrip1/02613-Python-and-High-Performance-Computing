@@ -1,0 +1,119 @@
+Architecture:                         x86_64
+CPU op-mode(s):                       32-bit, 64-bit
+Address sizes:                        46 bits physical, 48 bits virtual
+Byte Order:                           Little Endian
+CPU(s):                               32
+On-line CPU(s) list:                  0-31
+Vendor ID:                            GenuineIntel
+Model name:                           Intel(R) Xeon(R) Gold 6226R CPU @ 2.90GHz
+CPU family:                           6
+Model:                                85
+Thread(s) per core:                   1
+Core(s) per socket:                   16
+Socket(s):                            2
+Stepping:                             7
+BogoMIPS:                             5800.00
+Flags:                                fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp lm constant_tsc art arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf pni pclmulqdq dtes64 monitor ds_cpl vmx smx est tm2 ssse3 sdbg fma cx16 xtpr pdcm pcid dca sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm abm 3dnowprefetch cpuid_fault epb cat_l3 cdp_l3 invpcid_single intel_ppin ssbd mba ibrs ibpb stibp ibrs_enhanced tpr_shadow vnmi flexpriority ept vpid ept_ad fsgsbase tsc_adjust bmi1 avx2 smep bmi2 erms invpcid cqm mpx rdt_a avx512f avx512dq rdseed adx smap clflushopt clwb intel_pt avx512cd avx512bw avx512vl xsaveopt xsavec xgetbv1 xsaves cqm_llc cqm_occup_llc cqm_mbm_total cqm_mbm_local dtherm arat pln pts hwp_epp pku ospke avx512_vnni md_clear flush_l1d arch_capabilities
+Virtualization:                       VT-x
+L1d cache:                            1 MiB (32 instances)
+L1i cache:                            1 MiB (32 instances)
+L2 cache:                             32 MiB (32 instances)
+L3 cache:                             44 MiB (2 instances)
+NUMA node(s):                         2
+NUMA node0 CPU(s):                    0-15
+NUMA node1 CPU(s):                    16-31
+Vulnerability Gather data sampling:   Mitigation; Microcode
+Vulnerability Itlb multihit:          KVM: Mitigation: VMX disabled
+Vulnerability L1tf:                   Not affected
+Vulnerability Mds:                    Not affected
+Vulnerability Meltdown:               Not affected
+Vulnerability Mmio stale data:        Mitigation; Clear CPU buffers; SMT disabled
+Vulnerability Reg file data sampling: Not affected
+Vulnerability Retbleed:               Mitigation; Enhanced IBRS
+Vulnerability Spec rstack overflow:   Not affected
+Vulnerability Spec store bypass:      Mitigation; Speculative Store Bypass disabled via prctl
+Vulnerability Spectre v1:             Mitigation; usercopy/swapgs barriers and __user pointer sanitization
+Vulnerability Spectre v2:             Mitigation; Enhanced / Automatic IBRS; IBPB conditional; RSB filling; PBRSB-eIBRS SW sequence; BHI SW loop, KVM SW loop
+Vulnerability Srbds:                  Not affected
+Vulnerability Tsx async abort:        Mitigation; TSX disabled
+
+------------------------------------------------------------
+Sender: LSF System <lsfadmin@hpc.dtu.dk>
+Subject: Job 24143673: <time_test1_5> in cluster <dcc> Exited
+
+Job <time_test1_5> was submitted from host <hpclogin1> by user <s240577> in cluster <dcc> at Wed Feb 19 12:18:03 2025
+Job was executed on host(s) <n-62-11-66>, in queue <hpc>, as user <s240577> in cluster <dcc> at Wed Feb 19 12:18:04 2025
+</zhome/20/1/209339> was used as the home directory.
+</zhome/20/1/209339/02613-Python-and-High-Performance-Computing/week3> was used as the working directory.
+Started at Wed Feb 19 12:18:04 2025
+Terminated at Wed Feb 19 12:21:26 2025
+Results reported at Wed Feb 19 12:21:26 2025
+
+Your job looked like:
+
+------------------------------------------------------------
+# LSBATCH: User input
+#!/bin/bash
+
+### -- set the job Name -- 
+#BSUB -J time_test1_5
+
+### -- specify queue --
+#BSUB -q hpc
+
+### -- set walltime limit: hh:mm -- 
+#BSUB -W 4
+
+### -- specify that we need 512MB of memory per core/slot --
+#BSUB -R "rusage[mem=1GB]"
+
+### -- select the machine to be XeonGold6226R --
+#BSUB -R "select[model==XeonGold6226R]"
+
+### -- ask for number of cores (default: 1) -- 
+#BSUB -n 1
+
+### -- specify that the cores must be on the same host -- 
+#BSUB -R "span[hosts=1]"
+
+### -- Specify the output and error file. %J is the job-id -- 
+### -- -o and -e mean append, -oo and -eo mean overwrite -- 
+#BSUB -o bash_output/time_test1_5_%J.out
+#BSUB -e bash_output/time_test1_5_%J.err
+
+### -- Need to activate the python environment --
+source /dtu/projects/02613_2025/conda/conda_init.sh
+conda activate 02613
+
+lscpu
+
+### -- run in the job --
+### -- python program.py num_of_iterations -- 
+python Autolab1_5.py 1000
+
+------------------------------------------------------------
+
+TERM_RUNLIMIT: job killed after reaching LSF run time limit.
+Exited with exit code 140.
+
+Resource usage summary:
+
+    CPU time :                                   200.00 sec.
+    Max Memory :                                 587 MB
+    Average Memory :                             468.80 MB
+    Total Requested Memory :                     1024.00 MB
+    Delta Memory :                               437.00 MB
+    Max Swap :                                   -
+    Max Processes :                              4
+    Max Threads :                                5
+    Run time :                                   247 sec.
+    Turnaround time :                            203 sec.
+
+The output (if any) is above this job summary.
+
+
+
+PS:
+
+Read file <bash_output/time_test1_5_24143673.err> for stderr output of this job.
+
