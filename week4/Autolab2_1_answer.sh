@@ -31,5 +31,5 @@ source /dtu/projects/02613_2025/conda/conda_init.sh
 conda activate 02613
 
 ### -- run in the job --
-python python_performance.py /dtu/projects/02613_2025/data/locations/.
+python python_performance.py input.csv
 
