@@ -23,11 +23,11 @@ def distance_stats(D):
     idx = np.triu_indices(D.shape[0], k=1)
     distances = D[idx]
     return {
-            'mean': float(distances.mean()),
-            'std': float(distances.std()),
-            'max': float(distances.max()),
-            'min': float(distances.min()),
-            }
+        'mean': float(distances.mean()),
+        'std': float(distances.std()),
+        'max': float(distances.max()),
+        'min': float(distances.min()),
+    }
 
 fname = sys.argv[1]
 points = load_points(fname)
