@@ -31,5 +31,10 @@ source /dtu/projects/02613_2025/conda/conda_init.sh
 conda activate 02613
 
 ### -- run in the job --
-python python_performance.py /dtu/projects/02613_2025/data/locations/.
+### -- python program.py num_of_iterations -- 
+python python_performance /dtu/projects/02613_2025/data/locations/input.csv
+
+### -- Alternative way to do it, used for the autolab exercise: --
+###python Autolab2_1.py 512
+###python Autolab2_1.py 1024
 
