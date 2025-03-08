@@ -10,7 +10,7 @@
 #BSUB -W 5
 
 ### -- specify that we need 512MB of memory per core/slot --
-#BSUB -R "rusage[mem=5GB]"
+#BSUB -R "rusage[mem=10GB]"
 
 ### -- select the machine to be XeonGold6226R --
 #BSUB -R "select[model==XeonGold6226R]"

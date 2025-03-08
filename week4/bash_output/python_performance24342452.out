@@ -1,16 +1,16 @@
-{'mean': inf, 'std': nan, 'max': inf, 'min': inf}
+{'mean': 8265.008861411621, 'std': 4414.288253000801, 'max': 19668.754548210636, 'min': 48.28049817310419}
 
 ------------------------------------------------------------
 Sender: LSF System <lsfadmin@hpc.dtu.dk>
-Subject: Job 24215849: <python_performance> in cluster <dcc> Done
+Subject: Job 24342452: <python_performance> in cluster <dcc> Done
 
-Job <python_performance> was submitted from host <hpclogin1> by user <s240577> in cluster <dcc> at Wed Feb 26 11:49:35 2025
-Job was executed on host(s) <n-62-11-60>, in queue <hpc>, as user <s240577> in cluster <dcc> at Wed Feb 26 11:49:36 2025
+Job <python_performance> was submitted from host <hpclogin1> by user <s240577> in cluster <dcc> at Sat Mar  8 15:34:54 2025
+Job was executed on host(s) <n-62-11-60>, in queue <hpc>, as user <s240577> in cluster <dcc> at Sat Mar  8 15:34:54 2025
 </zhome/20/1/209339> was used as the home directory.
 </zhome/20/1/209339/02613-Python-and-High-Performance-Computing/week4> was used as the working directory.
-Started at Wed Feb 26 11:49:36 2025
-Terminated at Wed Feb 26 11:49:37 2025
-Results reported at Wed Feb 26 11:49:37 2025
+Started at Sat Mar  8 15:34:54 2025
+Terminated at Sat Mar  8 15:34:56 2025
+Results reported at Sat Mar  8 15:34:56 2025
 
 Your job looked like:
 
@@ -28,7 +28,7 @@ Your job looked like:
 #BSUB -W 5
 
 ### -- specify that we need 512MB of memory per core/slot --
-#BSUB -R "rusage[mem=5GB]"
+#BSUB -R "rusage[mem=10GB]"
 
 ### -- select the machine to be XeonGold6226R --
 #BSUB -R "select[model==XeonGold6226R]"
@@ -60,15 +60,15 @@ Successfully completed.
 
 Resource usage summary:
 
-    CPU time :                                   1.21 sec.
-    Max Memory :                                 -
-    Average Memory :                             -
-    Total Requested Memory :                     5120.00 MB
-    Delta Memory :                               -
+    CPU time :                                   1.00 sec.
+    Max Memory :                                 1 MB
+    Average Memory :                             1.00 MB
+    Total Requested Memory :                     10240.00 MB
+    Delta Memory :                               10239.00 MB
     Max Swap :                                   -
-    Max Processes :                              -
-    Max Threads :                                -
-    Run time :                                   5 sec.
+    Max Processes :                              1
+    Max Threads :                                1
+    Run time :                                   40 sec.
     Turnaround time :                            2 sec.
 
 The output (if any) is above this job summary.
@@ -77,5 +77,5 @@ The output (if any) is above this job summary.
 
 PS:
 
-Read file <bash_output/python_performance24215849.err> for stderr output of this job.
+Read file <bash_output/python_performance24342452.err> for stderr output of this job.
 
