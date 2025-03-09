@@ -3,21 +3,12 @@ import numpy as np
 
 def distance_matrix(p1, p2):
     p1, p2 = np.radians(p1), np.radians(p2)
-    print(f'shape of p1', p1.shape)
-    print(f'shape of p2', p2.shape)
     D = np.empty((len(p1), len(p2)))
     for i in range(len(p1)):
-        dsin2 = np.sin(0.5 * (p1[i] - p2[:])) ** 2
-        cosprod = np.cos(p1[i, 0]) * np.cos(p2[:, 0])
-        a = dsin2[0] + cosprod * dsin2[1]
-        D[i, :] = 2 * np.arctan2(np.sqrt(a), np.sqrt(1 - a))
-        
-        #for j in range(len(p2)):
-        #    dsin2 = np.sin(0.5 * (p1[i] - p2[j])) ** 2
-        #    cosprod = np.cos(p1[i, 0]) * np.cos(p2[j, 0])
-        #    a = dsin2[0] + cosprod * dsin2[1]
-        #    D[i, j] = 2 * np.arctan2(np.sqrt(a), np.sqrt(1 - a))
-
+        dsin2 = np.sin(0.5 * (p1[i] - p2)) ** 2
+        cosprod = np.cos(p1[:, 0]) * np.cos(p2[:, 0])
+        a = dsin2[:,0] + cosprod * dsin2[:,1]
+        D[i, :] =  2 * np.arctan2(np.sqrt(a), np.sqrt(1 - a))
     D *= 6371 # Earth radius in km
     return D
 
@@ -41,4 +32,3 @@ fname = sys.argv[1]
 points = load_points(fname)
 D = distance_matrix(points, points)
 stats = distance_stats(D)
-print(stats)
