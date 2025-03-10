@@ -1,7 +1,7 @@
 #!/bin/bash
 
 ### -- set the job Name -- 
-#BSUB -J python_performance_optim
+#BSUB -J python_performance_2_3optim
 
 ### -- specify queue --
 #BSUB -q hpc
@@ -23,17 +23,22 @@
 
 ### -- Specify the output and error file. %J is the job-id -- 
 ### -- -o and -e mean append, -oo and -eo mean overwrite -- 
-#BSUB -o bash_output/python_performance_optim%J.out
-#BSUB -e bash_output/python_performance_optim%J.err
+#BSUB -o bash_output/python_performance_2_3optim%J.out
+#BSUB -e bash_output/python_performance_2_3optim%J.err
 
 ### -- Need to activate the python environment --
 source /dtu/projects/02613_2025/conda/conda_init.sh
 conda activate 02613
 
-### -- run in the job --
+
+### The following code is for the cprofiler
 ### -m cProfile will run the program
 ### -s cumulative will sort by cumulative time (Cumulative is including time spent in sub-functions).
-python -m cProfile -s cumulative python_performance_optim.py /dtu/projects/02613_2025/data/locations/locations_100.csv
+### python -m cProfile -s cumulative python_performance_2_3optim.py /dtu/projects/02613_2025/data/locations/locations_100.csv
+
+### The following code is for the lineprofiler
+kernprof -l  python_performance_2_3optim.py /dtu/projects/02613_2025/data/locations/locations_100.csv 
+### python -m line_profiler python_performance_2_3optim.py /dtu/projects/02613_2025/data/locations/locations_100.csv 
 
 
 

@@ -1,0 +1,3 @@
+Loaded module: cuda/11.8
+python_performance_2_3optim.py:12: RuntimeWarning: invalid value encountered in arcsin
+  D[i, :] =  2 * np.arcsin(np.sqrt(a))
