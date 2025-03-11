@@ -18,3 +18,6 @@ if __name__ == '__main__':
     n_proc = 10
     chunk_size = samples//n_proc
     pool = multiprocessing.Pool(n_proc)
+    results_async = [pool.apply_async(sample_multiple, (chunk_size,)) for i in range(n_proc)]
+    hits = sum(r.get() for r in results_async)
+    pi = 4.0 * hits/samples
