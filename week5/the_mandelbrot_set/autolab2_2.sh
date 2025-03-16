@@ -33,13 +33,14 @@ lscpu
 
 ### -- run in the job --
 ### Use the time command below to time how long time it takes the script to be executed
-OUTPUT_FILE="mandelbrot.txt"
-> $OUTPUT_FILE  
 
-for n_proc in {1..10}; do
-    echo "Running with $n_proc processes..." | tee -a $OUTPUT_FILE
-    
-    # Run and measure execution time for parallel implementations
-    { time python the_mandelbrot_set.py $n_proc; } 2>> $OUTPUT_FILE
-done
-
+time python the_mandelbrot_set.py 1
+time python the_mandelbrot_set.py 2
+time python the_mandelbrot_set.py 3
+time python the_mandelbrot_set.py 4
+time python the_mandelbrot_set.py 5
+time python the_mandelbrot_set.py 6
+time python the_mandelbrot_set.py 7
+time python the_mandelbrot_set.py 8
+time python the_mandelbrot_set.py 9
+time python the_mandelbrot_set.py 10

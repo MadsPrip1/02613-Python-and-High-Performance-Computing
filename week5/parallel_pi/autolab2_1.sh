@@ -31,6 +31,7 @@ conda activate 02613
 
 lscpu
 
+
 ### -- run in the job --
 ### Use the time command below to time how long time it takes the script to be executed
 time python fully_serial.py 1
