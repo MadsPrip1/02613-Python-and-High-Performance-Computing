@@ -12,10 +12,15 @@ def mandelbrot_escape_time(c):
 
 def generate_mandelbrot_set(points, num_processes):
     pool = multiprocessing.Pool(num_processes)
+    # pool.map splits data into chunks and runs it statically by default.
     escape_times = np.array(pool.map(mandelbrot_escape_time, points))
-    print(type(escape_times))
     return escape_times
 
+def  generate_mandelbrot_set_chunks(points, num_processes):
+    chunk_size = 1000
+    pool = multiprocessing.Pool(num_processes)
+    escape_time = np.array(pool.map(mandelbrot_escape_time, points, chunksize=chunk_size)) # define the chunck size
+    return escape_time
 
 def plot_mandelbrot(escape_times):
     plt.imshow(escape_times, cmap='hot', extent=(-2, 2, -2, 2))
@@ -35,8 +40,9 @@ if __name__ == "__main__":
     points = np.array([complex(x, y) for x in x_values for y in y_values])
 
     # Compute set
-    mandelbrot_set = generate_mandelbrot_set(points, num_proc)
 
+    #mandelbrot_set = generate_mandelbrot_set(points, num_proc)
+    mandelbrot_set = generate_mandelbrot_set_chunks(points, num_proc)
     # Save set as image
     mandelbrot_set = mandelbrot_set.reshape((height, width))
     plot_mandelbrot(mandelbrot_set)
