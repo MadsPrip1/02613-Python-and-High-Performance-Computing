@@ -12,7 +12,8 @@ def mandelbrot_escape_time(c):
 
 def generate_mandelbrot_set(points, num_processes):
     pool = multiprocessing.Pool(num_processes)
-    escape_times = [pool.map(mandelbrot_escape_time, points)]
+    escape_times = np.array(pool.map(mandelbrot_escape_time, points))
+    print(type(escape_times))
     return escape_times
 
 
