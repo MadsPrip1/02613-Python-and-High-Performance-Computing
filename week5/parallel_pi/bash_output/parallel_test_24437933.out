@@ -12,7 +12,7 @@ Thread(s) per core:                   1
 Core(s) per socket:                   12
 Socket(s):                            2
 Stepping:                             1
-CPU(s) scaling MHz:                   97%
+CPU(s) scaling MHz:                   95%
 CPU max MHz:                          2900.0000
 CPU min MHz:                          1200.0000
 BogoMIPS:                             4389.81
@@ -39,29 +39,18 @@ Vulnerability Spectre v1:             Mitigation; usercopy/swapgs barriers and _
 Vulnerability Spectre v2:             Mitigation; Retpolines; IBPB conditional; IBRS_FW; RSB filling; PBRSB-eIBRS Not affected; BHI Not affected
 Vulnerability Srbds:                  Not affected
 Vulnerability Tsx async abort:        Mitigation; Clear CPU buffers; SMT disabled
-Running with 1 processes...
-Running with 2 processes...
-Running with 3 processes...
-Running with 4 processes...
-Running with 5 processes...
-Running with 6 processes...
-Running with 7 processes...
-Running with 8 processes...
-Running with 9 processes...
-Running with 10 processes...
-Running serial implementation...
 
 ------------------------------------------------------------
 Sender: LSF System <lsfadmin@hpc.dtu.dk>
-Subject: Job 24437398: <parallel_test> in cluster <dcc> Done
+Subject: Job 24437933: <parallel_test> in cluster <dcc> Done
 
-Job <parallel_test> was submitted from host <hpclogin1> by user <s240577> in cluster <dcc> at Sun Mar 16 09:55:32 2025
-Job was executed on host(s) <10*n-62-21-90>, in queue <hpc>, as user <s240577> in cluster <dcc> at Sun Mar 16 09:55:32 2025
+Job <parallel_test> was submitted from host <hpclogin1> by user <s240577> in cluster <dcc> at Sun Mar 16 12:54:24 2025
+Job was executed on host(s) <10*n-62-21-90>, in queue <hpc>, as user <s240577> in cluster <dcc> at Sun Mar 16 12:54:26 2025
 </zhome/20/1/209339> was used as the home directory.
 </zhome/20/1/209339/02613-Python-and-High-Performance-Computing/week5/parallel_pi> was used as the working directory.
-Started at Sun Mar 16 09:55:32 2025
-Terminated at Sun Mar 16 10:04:24 2025
-Results reported at Sun Mar 16 10:04:24 2025
+Started at Sun Mar 16 12:54:26 2025
+Terminated at Sun Mar 16 13:03:16 2025
+Results reported at Sun Mar 16 13:03:16 2025
 
 Your job looked like:
 
@@ -102,35 +91,38 @@ lscpu
 
 ### -- run in the job --
 ### Use the time command below to time how long time it takes the script to be executed
-OUTPUT_FILE="timing_results.txt"
-> $OUTPUT_FILE  
+time python fully_serial.py 1
+time python chunked_parallel.py 1
+time python fully_parallel.py 1
 
-for n_proc in {1..10}; do
-    echo "Running with $n_proc processes..." | tee -a $OUTPUT_FILE
-    
-    # Run and measure execution time for parallel implementations
-    { time python chunked_parallel.py $n_proc; } 2>> $OUTPUT_FILE
-    { time python fully_parallel.py $n_proc; } 2>> $OUTPUT_FILE
-done
+time python fully_serial.py 2
+time python chunked_parallel.py 2
+time python fully_parallel.py 2
 
-# Run the serial implementation (only once, since it's not parallel)
-echo "Running serial implementation..." | tee -a $OUTPUT_FILE
-{ time python fully_serial.py; } 2>> $OUTPUT_FILE
+time python fully_serial.py 3
+time python chunked_parallel.py 3
+time python fully_parallel.py 3
+
+time python fully_serial.py 4
+time python chunked_parallel.py 4
+time python fully_parallel.py 4
+
+(... more ...)
 ------------------------------------------------------------
 
 Successfully completed.
 
 Resource usage summary:
 
-    CPU time :                                   1023.73 sec.
-    Max Memory :                                 2039 MB
-    Average Memory :                             1816.43 MB
+    CPU time :                                   1015.97 sec.
+    Max Memory :                                 2061 MB
+    Average Memory :                             1893.33 MB
     Total Requested Memory :                     10240.00 MB
-    Delta Memory :                               8201.00 MB
+    Delta Memory :                               8179.00 MB
     Max Swap :                                   -
     Max Processes :                              14
     Max Threads :                                18
-    Run time :                                   532 sec.
+    Run time :                                   530 sec.
     Turnaround time :                            532 sec.
 
 The output (if any) is above this job summary.
@@ -139,5 +131,5 @@ The output (if any) is above this job summary.
 
 PS:
 
-Read file <bash_output/parallel_test_24437398.err> for stderr output of this job.
+Read file <bash_output/parallel_test_24437933.err> for stderr output of this job.
 

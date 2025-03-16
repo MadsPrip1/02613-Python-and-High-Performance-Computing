@@ -1,0 +1,121 @@
+Loaded module: cuda/11.8
+
+real	0m0.783s
+user	0m0.771s
+sys	0m0.005s
+
+real	0m0.169s
+user	0m0.718s
+sys	0m0.046s
+
+real	0m48.894s
+user	1m9.278s
+sys	0m24.223s
+
+real	0m0.763s
+user	0m0.751s
+sys	0m0.003s
+
+real	0m0.183s
+user	0m0.719s
+sys	0m0.042s
+
+real	0m49.768s
+user	1m9.601s
+sys	0m24.572s
+
+real	0m0.762s
+user	0m0.747s
+sys	0m0.003s
+
+real	0m0.172s
+user	0m0.713s
+sys	0m0.043s
+
+real	0m56.734s
+user	1m22.776s
+sys	0m27.364s
+
+real	0m0.809s
+user	0m0.791s
+sys	0m0.005s
+
+real	0m0.167s
+user	0m0.726s
+sys	0m0.037s
+
+real	0m49.646s
+user	1m9.852s
+sys	0m24.372s
+
+real	0m0.762s
+user	0m0.745s
+sys	0m0.005s
+
+real	0m0.172s
+user	0m0.704s
+sys	0m0.050s
+
+real	0m49.029s
+user	1m9.245s
+sys	0m24.092s
+
+real	0m0.766s
+user	0m0.753s
+sys	0m0.005s
+
+real	0m0.165s
+user	0m0.709s
+sys	0m0.043s
+
+real	0m53.308s
+user	1m18.045s
+sys	0m26.799s
+
+real	0m0.765s
+user	0m0.745s
+sys	0m0.008s
+
+real	0m0.173s
+user	0m0.709s
+sys	0m0.045s
+
+real	0m55.124s
+user	1m18.366s
+sys	0m26.956s
+
+real	0m0.773s
+user	0m0.761s
+sys	0m0.004s
+
+real	0m0.166s
+user	0m0.728s
+sys	0m0.036s
+
+real	0m55.467s
+user	1m19.181s
+sys	0m27.342s
+
+real	0m0.790s
+user	0m0.771s
+sys	0m0.008s
+
+real	0m0.171s
+user	0m0.713s
+sys	0m0.041s
+
+real	0m51.351s
+user	1m16.045s
+sys	0m26.600s
+
+real	0m0.802s
+user	0m0.787s
+sys	0m0.008s
+
+real	0m0.166s
+user	0m0.724s
+sys	0m0.041s
+
+real	0m50.140s
+user	1m10.202s
+sys	0m24.399s

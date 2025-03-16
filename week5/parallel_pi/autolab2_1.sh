@@ -33,17 +33,43 @@ lscpu
 
 ### -- run in the job --
 ### Use the time command below to time how long time it takes the script to be executed
-OUTPUT_FILE="timing_results.txt"
-> $OUTPUT_FILE  
+time python fully_serial.py 1
+time python chunked_parallel.py 1
+time python fully_parallel.py 1
 
-for n_proc in {1..10}; do
-    echo "Running with $n_proc processes..." | tee -a $OUTPUT_FILE
-    
-    # Run and measure execution time for parallel implementations
-    { time python chunked_parallel.py $n_proc; } 2>> $OUTPUT_FILE
-    { time python fully_parallel.py $n_proc; } 2>> $OUTPUT_FILE
-done
+time python fully_serial.py 2
+time python chunked_parallel.py 2
+time python fully_parallel.py 2
 
-# Run the serial implementation (only once, since it's not parallel)
-echo "Running serial implementation..." | tee -a $OUTPUT_FILE
-{ time python fully_serial.py; } 2>> $OUTPUT_FILE
+time python fully_serial.py 3
+time python chunked_parallel.py 3
+time python fully_parallel.py 3
+
+time python fully_serial.py 4
+time python chunked_parallel.py 4
+time python fully_parallel.py 4
+
+time python fully_serial.py 5
+time python chunked_parallel.py 5
+time python fully_parallel.py 5
+
+time python fully_serial.py 6
+time python chunked_parallel.py 6
+time python fully_parallel.py 6
+
+time python fully_serial.py 7
+time python chunked_parallel.py 7
+time python fully_parallel.py 7
+
+time python fully_serial.py 8
+time python chunked_parallel.py 8
+time python fully_parallel.py 8
+
+time python fully_serial.py 9
+time python chunked_parallel.py 9
+time python fully_parallel.py 9
+
+time python fully_serial.py 10
+time python chunked_parallel.py 10
+time python fully_parallel.py 10
+
