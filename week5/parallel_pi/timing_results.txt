@@ -1,212 +1,95 @@
 Running with 1 processes...
 
-real	0m0.137s
-user	0m0.050s
-sys	0m0.057s
-/zhome/20/1/209339/.lsbatch/1741721197.24396732.shell: line 39: 2305255 Killed                  python fully_parallel.py $n_proc
+real	0m0.241s
+user	0m0.717s
+sys	0m0.059s
 
-real	0m33.324s
-user	0m22.258s
-sys	0m2.609s
+real	0m51.760s
+user	1m12.765s
+sys	0m24.293s
 Running with 2 processes...
 
-real	0m0.138s
-user	0m0.057s
-sys	0m0.048s
-/zhome/20/1/209339/.lsbatch/1741721197.24396732.shell: line 39: 2305287 Killed                  python fully_parallel.py $n_proc
+real	0m0.172s
+user	0m0.707s
+sys	0m0.058s
 
-real	0m34.169s
-user	0m22.657s
-sys	0m2.619s
+real	0m55.157s
+user	1m19.934s
+sys	0m27.280s
 Running with 3 processes...
 
-real	0m0.158s
-user	0m0.067s
-sys	0m0.057s
-/zhome/20/1/209339/.lsbatch/1741721197.24396732.shell: line 39: 2305325 Killed                  python fully_parallel.py $n_proc
+real	0m0.172s
+user	0m0.720s
+sys	0m0.044s
 
-real	0m34.728s
-user	0m22.902s
-sys	0m2.676s
+real	0m55.913s
+user	1m21.545s
+sys	0m27.664s
 Running with 4 processes...
 
-real	0m0.166s
-user	0m0.079s
-sys	0m0.050s
-Process ForkPoolWorker-1:
-Process ForkPoolWorker-2:
-Process ForkPoolWorker-3:
-Process ForkPoolWorker-4:
-Process ForkPoolWorker-5:
-Process ForkPoolWorker-6:
-Process ForkPoolWorker-7:
-Process ForkPoolWorker-8:
-Process ForkPoolWorker-9:
-Process ForkPoolWorker-10:
-Traceback (most recent call last):
-Traceback (most recent call last):
-Traceback (most recent call last):
-Traceback (most recent call last):
-Traceback (most recent call last):
-Traceback (most recent call last):
-Traceback (most recent call last):
-Traceback (most recent call last):
-Traceback (most recent call last):
-Traceback (most recent call last):
-  File "/dtu/projects/02613_2025/conda/miniconda3/envs/02613/lib/python3.11/multiprocessing/process.py", line 314, in _bootstrap
-    self.run()
-  File "/dtu/projects/02613_2025/conda/miniconda3/envs/02613/lib/python3.11/multiprocessing/process.py", line 108, in run
-    self._target(*self._args, **self._kwargs)
-  File "/dtu/projects/02613_2025/conda/miniconda3/envs/02613/lib/python3.11/multiprocessing/pool.py", line 114, in worker
-    task = get()
-           ^^^^^
-  File "/dtu/projects/02613_2025/conda/miniconda3/envs/02613/lib/python3.11/multiprocessing/queues.py", line 364, in get
-    with self._rlock:
-  File "/dtu/projects/02613_2025/conda/miniconda3/envs/02613/lib/python3.11/multiprocessing/synchronize.py", line 95, in __enter__
-    return self._semlock.__enter__()
-           ^^^^^^^^^^^^^^^^^^^^^^^^^
-KeyboardInterrupt
-  File "/dtu/projects/02613_2025/conda/miniconda3/envs/02613/lib/python3.11/multiprocessing/process.py", line 314, in _bootstrap
-    self.run()
-  File "/dtu/projects/02613_2025/conda/miniconda3/envs/02613/lib/python3.11/multiprocessing/process.py", line 108, in run
-    self._target(*self._args, **self._kwargs)
-  File "/dtu/projects/02613_2025/conda/miniconda3/envs/02613/lib/python3.11/multiprocessing/pool.py", line 114, in worker
-    task = get()
-           ^^^^^
-  File "/dtu/projects/02613_2025/conda/miniconda3/envs/02613/lib/python3.11/multiprocessing/queues.py", line 364, in get
-    with self._rlock:
-  File "/dtu/projects/02613_2025/conda/miniconda3/envs/02613/lib/python3.11/multiprocessing/synchronize.py", line 95, in __enter__
-    return self._semlock.__enter__()
-           ^^^^^^^^^^^^^^^^^^^^^^^^^
-KeyboardInterrupt
-  File "/dtu/projects/02613_2025/conda/miniconda3/envs/02613/lib/python3.11/multiprocessing/process.py", line 314, in _bootstrap
-    self.run()
-  File "/dtu/projects/02613_2025/conda/miniconda3/envs/02613/lib/python3.11/multiprocessing/process.py", line 108, in run
-    self._target(*self._args, **self._kwargs)
-  File "/dtu/projects/02613_2025/conda/miniconda3/envs/02613/lib/python3.11/multiprocessing/pool.py", line 114, in worker
-    task = get()
-           ^^^^^
-  File "/dtu/projects/02613_2025/conda/miniconda3/envs/02613/lib/python3.11/multiprocessing/queues.py", line 364, in get
-    with self._rlock:
-  File "/dtu/projects/02613_2025/conda/miniconda3/envs/02613/lib/python3.11/multiprocessing/synchronize.py", line 95, in __enter__
-    return self._semlock.__enter__()
-           ^^^^^^^^^^^^^^^^^^^^^^^^^
-KeyboardInterrupt
-  File "/dtu/projects/02613_2025/conda/miniconda3/envs/02613/lib/python3.11/multiprocessing/process.py", line 314, in _bootstrap
-    self.run()
-  File "/dtu/projects/02613_2025/conda/miniconda3/envs/02613/lib/python3.11/multiprocessing/process.py", line 108, in run
-    self._target(*self._args, **self._kwargs)
-  File "/dtu/projects/02613_2025/conda/miniconda3/envs/02613/lib/python3.11/multiprocessing/pool.py", line 114, in worker
-    task = get()
-           ^^^^^
-  File "/dtu/projects/02613_2025/conda/miniconda3/envs/02613/lib/python3.11/multiprocessing/queues.py", line 364, in get
-    with self._rlock:
-  File "/dtu/projects/02613_2025/conda/miniconda3/envs/02613/lib/python3.11/multiprocessing/synchronize.py", line 95, in __enter__
-    return self._semlock.__enter__()
-           ^^^^^^^^^^^^^^^^^^^^^^^^^
-KeyboardInterrupt
-  File "/dtu/projects/02613_2025/conda/miniconda3/envs/02613/lib/python3.11/multiprocessing/process.py", line 314, in _bootstrap
-    self.run()
-  File "/dtu/projects/02613_2025/conda/miniconda3/envs/02613/lib/python3.11/multiprocessing/process.py", line 108, in run
-    self._target(*self._args, **self._kwargs)
-  File "/dtu/projects/02613_2025/conda/miniconda3/envs/02613/lib/python3.11/multiprocessing/pool.py", line 114, in worker
-    task = get()
-           ^^^^^
-  File "/dtu/projects/02613_2025/conda/miniconda3/envs/02613/lib/python3.11/multiprocessing/queues.py", line 364, in get
-    with self._rlock:
-  File "/dtu/projects/02613_2025/conda/miniconda3/envs/02613/lib/python3.11/multiprocessing/synchronize.py", line 95, in __enter__
-    return self._semlock.__enter__()
-           ^^^^^^^^^^^^^^^^^^^^^^^^^
-KeyboardInterrupt
-  File "/dtu/projects/02613_2025/conda/miniconda3/envs/02613/lib/python3.11/multiprocessing/process.py", line 314, in _bootstrap
-    self.run()
-  File "/dtu/projects/02613_2025/conda/miniconda3/envs/02613/lib/python3.11/multiprocessing/process.py", line 108, in run
-    self._target(*self._args, **self._kwargs)
-  File "/dtu/projects/02613_2025/conda/miniconda3/envs/02613/lib/python3.11/multiprocessing/pool.py", line 114, in worker
-    task = get()
-           ^^^^^
-  File "/dtu/projects/02613_2025/conda/miniconda3/envs/02613/lib/python3.11/multiprocessing/queues.py", line 364, in get
-    with self._rlock:
-  File "/dtu/projects/02613_2025/conda/miniconda3/envs/02613/lib/python3.11/multiprocessing/synchronize.py", line 95, in __enter__
-    return self._semlock.__enter__()
-           ^^^^^^^^^^^^^^^^^^^^^^^^^
-KeyboardInterrupt
-  File "/dtu/projects/02613_2025/conda/miniconda3/envs/02613/lib/python3.11/multiprocessing/process.py", line 314, in _bootstrap
-    self.run()
-  File "/dtu/projects/02613_2025/conda/miniconda3/envs/02613/lib/python3.11/multiprocessing/process.py", line 108, in run
-    self._target(*self._args, **self._kwargs)
-  File "/dtu/projects/02613_2025/conda/miniconda3/envs/02613/lib/python3.11/multiprocessing/pool.py", line 114, in worker
-    task = get()
-           ^^^^^
-  File "/dtu/projects/02613_2025/conda/miniconda3/envs/02613/lib/python3.11/multiprocessing/queues.py", line 364, in get
-    with self._rlock:
-  File "/dtu/projects/02613_2025/conda/miniconda3/envs/02613/lib/python3.11/multiprocessing/synchronize.py", line 95, in __enter__
-    return self._semlock.__enter__()
-           ^^^^^^^^^^^^^^^^^^^^^^^^^
-KeyboardInterrupt
-  File "/dtu/projects/02613_2025/conda/miniconda3/envs/02613/lib/python3.11/multiprocessing/process.py", line 314, in _bootstrap
-    self.run()
-  File "/dtu/projects/02613_2025/conda/miniconda3/envs/02613/lib/python3.11/multiprocessing/process.py", line 108, in run
-    self._target(*self._args, **self._kwargs)
-  File "/dtu/projects/02613_2025/conda/miniconda3/envs/02613/lib/python3.11/multiprocessing/pool.py", line 114, in worker
-    task = get()
-           ^^^^^
-  File "/dtu/projects/02613_2025/conda/miniconda3/envs/02613/lib/python3.11/multiprocessing/queues.py", line 364, in get
-    with self._rlock:
-  File "/dtu/projects/02613_2025/conda/miniconda3/envs/02613/lib/python3.11/multiprocessing/synchronize.py", line 95, in __enter__
-    return self._semlock.__enter__()
-           ^^^^^^^^^^^^^^^^^^^^^^^^^
-KeyboardInterrupt
-  File "/dtu/projects/02613_2025/conda/miniconda3/envs/02613/lib/python3.11/multiprocessing/process.py", line 314, in _bootstrap
-    self.run()
-  File "/dtu/projects/02613_2025/conda/miniconda3/envs/02613/lib/python3.11/multiprocessing/process.py", line 108, in run
-    self._target(*self._args, **self._kwargs)
-  File "/dtu/projects/02613_2025/conda/miniconda3/envs/02613/lib/python3.11/multiprocessing/pool.py", line 114, in worker
-    task = get()
-           ^^^^^
-  File "/dtu/projects/02613_2025/conda/miniconda3/envs/02613/lib/python3.11/multiprocessing/queues.py", line 364, in get
-    with self._rlock:
-  File "/dtu/projects/02613_2025/conda/miniconda3/envs/02613/lib/python3.11/multiprocessing/synchronize.py", line 95, in __enter__
-    return self._semlock.__enter__()
-           ^^^^^^^^^^^^^^^^^^^^^^^^^
-KeyboardInterrupt
-  File "/dtu/projects/02613_2025/conda/miniconda3/envs/02613/lib/python3.11/multiprocessing/process.py", line 314, in _bootstrap
-    self.run()
-  File "/dtu/projects/02613_2025/conda/miniconda3/envs/02613/lib/python3.11/multiprocessing/process.py", line 108, in run
-    self._target(*self._args, **self._kwargs)
-  File "/dtu/projects/02613_2025/conda/miniconda3/envs/02613/lib/python3.11/multiprocessing/pool.py", line 114, in worker
-    task = get()
-           ^^^^^
-  File "/dtu/projects/02613_2025/conda/miniconda3/envs/02613/lib/python3.11/multiprocessing/queues.py", line 365, in get
-    res = self._reader.recv_bytes()
-          ^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/dtu/projects/02613_2025/conda/miniconda3/envs/02613/lib/python3.11/multiprocessing/connection.py", line 215, in recv_bytes
-    buf = self._recv_bytes(maxlength)
-          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/dtu/projects/02613_2025/conda/miniconda3/envs/02613/lib/python3.11/multiprocessing/connection.py", line 413, in _recv_bytes
-    buf = self._recv(4)
-          ^^^^^^^^^^^^^
-  File "/dtu/projects/02613_2025/conda/miniconda3/envs/02613/lib/python3.11/multiprocessing/connection.py", line 378, in _recv
-    chunk = read(handle, remaining)
-            ^^^^^^^^^^^^^^^^^^^^^^^
-KeyboardInterrupt
-Traceback (most recent call last):
-  File "/zhome/20/1/209339/02613-Python-and-High-Performance-Computing/week5/parallel_pi/fully_parallel.py", line 17, in <module>
-    results_async = [pool.apply_async(sample) for i in range(samples)]
-                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/zhome/20/1/209339/02613-Python-and-High-Performance-Computing/week5/parallel_pi/fully_parallel.py", line 17, in <listcomp>
-    results_async = [pool.apply_async(sample) for i in range(samples)]
-                     ^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/dtu/projects/02613_2025/conda/miniconda3/envs/02613/lib/python3.11/multiprocessing/pool.py", line 459, in apply_async
-    result = ApplyResult(self, callback, error_callback)
-             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/dtu/projects/02613_2025/conda/miniconda3/envs/02613/lib/python3.11/multiprocessing/pool.py", line 749, in __init__
-    self._event = threading.Event()
-                  ^^^^^^^^^^^^^^^^^
-  File "/dtu/projects/02613_2025/conda/miniconda3/envs/02613/lib/python3.11/threading.py", line 556, in __init__
-    self._cond = Condition(Lock())
-                 ^^^^^^^^^^^^^^^^^
-  File "/dtu/projects/02613_2025/conda/miniconda3/envs/02613/lib/python3.11/threading.py", line 236, in __init__
-    def __init__(self, lock=None):
+real	0m0.174s
+user	0m0.736s
+sys	0m0.036s
 
-KeyboardInterrupt
+real	0m51.689s
+user	1m13.098s
+sys	0m25.316s
+Running with 5 processes...
+
+real	0m0.172s
+user	0m0.717s
+sys	0m0.053s
+
+real	0m49.133s
+user	1m9.447s
+sys	0m24.048s
+Running with 6 processes...
+
+real	0m0.170s
+user	0m0.724s
+sys	0m0.037s
+
+real	0m54.463s
+user	1m19.195s
+sys	0m27.139s
+Running with 7 processes...
+
+real	0m0.166s
+user	0m0.720s
+sys	0m0.046s
+
+real	0m49.424s
+user	1m9.586s
+sys	0m24.151s
+Running with 8 processes...
+
+real	0m0.173s
+user	0m0.712s
+sys	0m0.047s
+
+real	0m49.019s
+user	1m9.563s
+sys	0m24.054s
+Running with 9 processes...
+
+real	0m0.167s
+user	0m0.710s
+sys	0m0.042s
+
+real	0m52.655s
+user	1m16.570s
+sys	0m26.148s
+Running with 10 processes...
+
+real	0m0.173s
+user	0m0.709s
+sys	0m0.046s
+
+real	0m58.761s
+user	1m24.288s
+sys	0m27.815s
+Running serial implementation...
+
+real	0m0.758s
+user	0m0.747s
+sys	0m0.004s

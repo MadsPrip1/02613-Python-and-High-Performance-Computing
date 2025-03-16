@@ -1,0 +1,143 @@
+Architecture:                         x86_64
+CPU op-mode(s):                       32-bit, 64-bit
+Address sizes:                        46 bits physical, 48 bits virtual
+Byte Order:                           Little Endian
+CPU(s):                               24
+On-line CPU(s) list:                  0-23
+Vendor ID:                            GenuineIntel
+Model name:                           Intel(R) Xeon(R) CPU E5-2650 v4 @ 2.20GHz
+CPU family:                           6
+Model:                                79
+Thread(s) per core:                   1
+Core(s) per socket:                   12
+Socket(s):                            2
+Stepping:                             1
+CPU(s) scaling MHz:                   97%
+CPU max MHz:                          2900.0000
+CPU min MHz:                          1200.0000
+BogoMIPS:                             4389.81
+Flags:                                fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp lm constant_tsc arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf pni pclmulqdq dtes64 ds_cpl vmx smx est tm2 ssse3 sdbg fma cx16 xtpr pdcm pcid dca sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm abm 3dnowprefetch cpuid_fault epb cat_l3 cdp_l3 invpcid_single pti intel_ppin ssbd ibrs ibpb stibp tpr_shadow vnmi flexpriority ept vpid ept_ad fsgsbase tsc_adjust bmi1 hle avx2 smep bmi2 erms invpcid rtm cqm rdt_a rdseed adx smap intel_pt xsaveopt cqm_llc cqm_occup_llc cqm_mbm_total cqm_mbm_local dtherm ida arat pln pts md_clear flush_l1d
+Virtualization:                       VT-x
+L1d cache:                            768 KiB (24 instances)
+L1i cache:                            768 KiB (24 instances)
+L2 cache:                             6 MiB (24 instances)
+L3 cache:                             60 MiB (2 instances)
+NUMA node(s):                         2
+NUMA node0 CPU(s):                    0-11
+NUMA node1 CPU(s):                    12-23
+Vulnerability Gather data sampling:   Not affected
+Vulnerability Itlb multihit:          KVM: Mitigation: VMX disabled
+Vulnerability L1tf:                   Mitigation; PTE Inversion; VMX conditional cache flushes, SMT disabled
+Vulnerability Mds:                    Mitigation; Clear CPU buffers; SMT disabled
+Vulnerability Meltdown:               Mitigation; PTI
+Vulnerability Mmio stale data:        Mitigation; Clear CPU buffers; SMT disabled
+Vulnerability Reg file data sampling: Not affected
+Vulnerability Retbleed:               Not affected
+Vulnerability Spec rstack overflow:   Not affected
+Vulnerability Spec store bypass:      Mitigation; Speculative Store Bypass disabled via prctl
+Vulnerability Spectre v1:             Mitigation; usercopy/swapgs barriers and __user pointer sanitization
+Vulnerability Spectre v2:             Mitigation; Retpolines; IBPB conditional; IBRS_FW; RSB filling; PBRSB-eIBRS Not affected; BHI Not affected
+Vulnerability Srbds:                  Not affected
+Vulnerability Tsx async abort:        Mitigation; Clear CPU buffers; SMT disabled
+Running with 1 processes...
+Running with 2 processes...
+Running with 3 processes...
+Running with 4 processes...
+Running with 5 processes...
+Running with 6 processes...
+Running with 7 processes...
+Running with 8 processes...
+Running with 9 processes...
+Running with 10 processes...
+Running serial implementation...
+
+------------------------------------------------------------
+Sender: LSF System <lsfadmin@hpc.dtu.dk>
+Subject: Job 24437398: <parallel_test> in cluster <dcc> Done
+
+Job <parallel_test> was submitted from host <hpclogin1> by user <s240577> in cluster <dcc> at Sun Mar 16 09:55:32 2025
+Job was executed on host(s) <10*n-62-21-90>, in queue <hpc>, as user <s240577> in cluster <dcc> at Sun Mar 16 09:55:32 2025
+</zhome/20/1/209339> was used as the home directory.
+</zhome/20/1/209339/02613-Python-and-High-Performance-Computing/week5/parallel_pi> was used as the working directory.
+Started at Sun Mar 16 09:55:32 2025
+Terminated at Sun Mar 16 10:04:24 2025
+Results reported at Sun Mar 16 10:04:24 2025
+
+Your job looked like:
+
+------------------------------------------------------------
+# LSBATCH: User input
+#!/bin/bash
+### -- set the job Name -- 
+#BSUB -J parallel_test
+
+### -- specify queue --
+#BSUB -q hpc
+
+### -- set walltime limit: hh:mm -- 
+#BSUB -W 20
+
+### -- specify that we need 512MB of memory per core/slot --
+#BSUB -R "rusage[mem=1GB]"
+
+### -- select the machine to be XeonGold6226R --
+#BSUB -R "select[model==XeonE5_2650v4]"
+
+### -- ask for number of cores (default: 1) -- 
+#BSUB -n 10
+
+### -- specify that the cores must be on the same host -- 
+#BSUB -R "span[hosts=1]"
+
+### -- Specify the output and error file. %J is the job-id -- 
+### -- -o and -e mean append, -oo and -eo mean overwrite -- 
+#BSUB -o bash_output/parallel_test_%J.out
+#BSUB -e bash_output/parallel_test_%J.err
+
+### -- Need to activate the python environment --
+source /dtu/projects/02613_2025/conda/conda_init.sh
+conda activate 02613
+
+lscpu
+
+### -- run in the job --
+### Use the time command below to time how long time it takes the script to be executed
+OUTPUT_FILE="timing_results.txt"
+> $OUTPUT_FILE  
+
+for n_proc in {1..10}; do
+    echo "Running with $n_proc processes..." | tee -a $OUTPUT_FILE
+    
+    # Run and measure execution time for parallel implementations
+    { time python chunked_parallel.py $n_proc; } 2>> $OUTPUT_FILE
+    { time python fully_parallel.py $n_proc; } 2>> $OUTPUT_FILE
+done
+
+# Run the serial implementation (only once, since it's not parallel)
+echo "Running serial implementation..." | tee -a $OUTPUT_FILE
+{ time python fully_serial.py; } 2>> $OUTPUT_FILE
+------------------------------------------------------------
+
+Successfully completed.
+
+Resource usage summary:
+
+    CPU time :                                   1023.73 sec.
+    Max Memory :                                 2039 MB
+    Average Memory :                             1816.43 MB
+    Total Requested Memory :                     10240.00 MB
+    Delta Memory :                               8201.00 MB
+    Max Swap :                                   -
+    Max Processes :                              14
+    Max Threads :                                18
+    Run time :                                   532 sec.
+    Turnaround time :                            532 sec.
+
+The output (if any) is above this job summary.
+
+
+
+PS:
+
+Read file <bash_output/parallel_test_24437398.err> for stderr output of this job.
+

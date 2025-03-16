@@ -35,6 +35,7 @@ for i, line in enumerate(lines):
             times_chunked_parallel.append(time_chunked)
             collect_chunked_parallel = False
             collect_fully_parallel = True  # Second script: fully parallel
+            continue
             print(f"Found chunked parallel time: {time_chunked}s")
 
     # Match fully parallel execution time
@@ -75,15 +76,18 @@ times_chunked_parallel = np.array(times_chunked_parallel)
 times_serial = np.full_like(n_procs, times_serial)  # Serial time is constant
 
 # Plot execution times
-plt.figure(figsize=(8, 5))
-plt.plot(n_procs, times_chunked_parallel, marker="o", linestyle="-", label="Chunked Parallel")
-plt.plot(n_procs, times_fully_parallel, marker="s", linestyle="--", label="Fully Parallel")
-plt.plot(n_procs, times_serial, marker="^", linestyle=":", label="Serial Execution")
+fig, ax = plt.subplots(1,3, figsize=(15,5))
 
-plt.xlabel("Number of Processes")
-plt.ylabel("Execution Time (seconds)")
-plt.title("Execution Time vs. Number of Processes")
-plt.legend()
-plt.grid()
+ax[0].plot(n_procs, times_chunked_parallel, marker="o", linestyle="-", label="Chunked Parallel")
+ax[1].plot(n_procs, times_fully_parallel, marker="s", linestyle="--", label="Fully Parallel")
+ax[2].plot(n_procs, times_serial, marker="^", linestyle=":", label="Serial Execution")
+
+for i in range(3):
+    ax[i].set_xlabel("Number of Processes")
+    ax[i].set_ylabel("Execution Time (seconds)")
+    ax[i].set_title("Execution Time vs. Number of Processes")
+    ax[i].legend()
+    ax[i].grid()
+    
 plt.savefig('parallel.png')
 plt.show()

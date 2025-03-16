@@ -11,10 +11,10 @@ def mandelbrot_escape_time(c):
     return 100
 
 def generate_mandelbrot_set(points, num_processes):
-    chunk_size = points//num_processes
     pool = multiprocessing.Pool(num_processes)
-    escape_times = [pool.apply_async(mandelbrot_escape_time, (chunk_size, )) for i in range(num_processes)]
+    escape_times = [pool.map(mandelbrot_escape_time, points)]
     return escape_times
+
 
 def plot_mandelbrot(escape_times):
     plt.imshow(escape_times, cmap='hot', extent=(-2, 2, -2, 2))

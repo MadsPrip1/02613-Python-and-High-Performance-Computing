@@ -15,7 +15,7 @@
 #BSUB -R "select[model==XeonE5_2650v4]"
 
 ### -- ask for number of cores (default: 1) -- 
-#BSUB -n 1
+#BSUB -n 10
 
 ### -- specify that the cores must be on the same host -- 
 #BSUB -R "span[hosts=1]"
