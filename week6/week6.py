@@ -16,7 +16,6 @@ def tonumpyarray(mp_arr):
 def reduce_step(args):
     b, e, s, elemshape = args
     arr = tonumpyarray(shared_arr).reshape((-1,) + elemshape)
-   
     #My code
     arr[b] = np.sum(arr[b:e:s])
     return arr[b]
@@ -40,7 +39,6 @@ if __name__ == '__main__':
     # Change the code below to compute a step of the reduction
     # ---------------------------8<---------------------------
     arr = pool.map(reduce_step, [(i, i + chunk, 1, elemshape) for i in range(0, len(arr), chunk)], chunksize=1)     # Need to make the parameters we have to a list because pool.map expect an iterable object
-    print(np.array(arr))
 
     # Write output
     print(time() - t)
