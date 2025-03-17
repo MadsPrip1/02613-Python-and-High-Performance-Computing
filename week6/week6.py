@@ -32,7 +32,7 @@ if __name__ == '__main__':
     arr = tonumpyarray(shared_arr).reshape(data.shape)
     np.copyto(arr, data)
     del data
-
+   
     # Run parallel sum
     t = time()
     pool = mp.Pool(n_processes, initializer=init, initargs=(shared_arr,))
@@ -40,7 +40,7 @@ if __name__ == '__main__':
     # Change the code below to compute a step of the reduction
     # ---------------------------8<---------------------------
     arr = pool.map(reduce_step, [(i, i + chunk, 1, elemshape) for i in range(0, len(arr), chunk)], chunksize=1)     # Need to make the parameters we have to a list because pool.map expect an iterable object
-
+    print(len(arr))
     # Write output
     print(time() - t)
     final_image = arr[0]
