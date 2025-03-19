@@ -18,8 +18,6 @@ def reduce_step(args):
     arr = tonumpyarray(shared_arr).reshape((-1,) + elemshape)
     #My code
     return np.sum(arr[b:e:s], axis=0)
-    
-    
    
  
 if __name__ == '__main__':
@@ -30,10 +28,9 @@ if __name__ == '__main__':
     elemshape = data.shape[1:]
     shared_arr = mp.RawArray(ctypes.c_float, data.size)
     arr = tonumpyarray(shared_arr).reshape(data.shape)
-    len_arr = len(arr)
     np.copyto(arr, data)
     del data
-   
+
     # Run parallel sum
     t = time()
     pool = mp.Pool(n_processes, initializer=init, initargs=(shared_arr,))
@@ -46,6 +43,6 @@ if __name__ == '__main__':
     print(time() - t)
     final_image = arr[0]
     
-    # final_image /= len_arr # For mean
 
-    Image.fromarray((255 * final_image.astype(float)).astype('uint8')).save('result reduction step 1.png')
+    # final_image /= len(arr) # For mean
+    Image.fromarray((255 * final_image.astype(float)).astype('uint8')).save('result.png')
