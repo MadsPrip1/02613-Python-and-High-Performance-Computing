@@ -48,5 +48,5 @@ if __name__ == '__main__':
     print(time() - t)
     final_image = arr[0]
     
-    #final_image /= len_arr # For mean
+    final_image /= len_arr # For mean
     Image.fromarray((255 * final_image.astype(float)).astype('uint8')).save('result.png')
