@@ -19,7 +19,6 @@ def reduce_step(args):
     #My code
     return np.sum(arr[b:e:s], axis=0)
    
- 
 if __name__ == '__main__':
     n_processes = 1
     chunk = 2
