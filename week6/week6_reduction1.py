@@ -17,9 +17,9 @@ def reduce_step(args):
     b, e, s, elemshape = args
     arr = tonumpyarray(shared_arr).reshape((-1,) + elemshape)
     #My code
-    arr[b] += np.sum(arr[b:e:s], axis=0)
+    return np.sum(arr[b:e:s], axis=0)
     
-    return arr[b]
+    
    
  
 if __name__ == '__main__':
